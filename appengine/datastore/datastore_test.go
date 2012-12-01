@@ -1,4 +1,4 @@
-// Copyright 2012 AEGo Authors. All rights reserved.
+// Copyright 2012 GAEGo Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -7,8 +7,8 @@ package datastore
 import (
 	"appengine"
 	"appengine/datastore"
-	"github.com/scotch/aego/v1/context"
-	dse "github.com/scotch/aego/v1/ds/errors"
+	"github.com/gaego/context"
+	dse "github.com/gaego/ds/errors"
 	"testing"
 )
 

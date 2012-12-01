@@ -7,8 +7,8 @@ package memory
 import (
 	"appengine"
 	"appengine/datastore"
-	"github.com/scotch/aego/v1/context"
-	dse "github.com/scotch/aego/v1/ds/errors"
+	"github.com/gaego/context"
+	dse "github.com/gaego/ds/errors"
 	"testing"
 )
 

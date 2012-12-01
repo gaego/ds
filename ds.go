@@ -1,4 +1,4 @@
-// Copyright 2012 AEGo Authors. All rights reserved.
+// Copyright 2012 GAEGo Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -32,9 +32,9 @@ import (
 	"appengine"
 	"appengine/datastore"
 	"fmt"
-	dsdatastore "github.com/scotch/aego/v1/ds/appengine/datastore"
-	dsmemcache "github.com/scotch/aego/v1/ds/appengine/memcache"
-	dsmemory "github.com/scotch/aego/v1/ds/memory"
+	dsdatastore "github.com/gaego/ds/appengine/datastore"
+	dsmemcache "github.com/gaego/ds/appengine/memcache"
+	dsmemory "github.com/gaego/ds/memory"
 	"time"
 )
 

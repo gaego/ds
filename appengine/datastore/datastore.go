@@ -12,7 +12,7 @@ package datastore
 import (
 	"appengine"
 	"appengine/datastore"
-	dserrors "github.com/scotch/aego/v1/ds/errors"
+	dserrors "github.com/gaego/ds/errors"
 )
 
 type Store struct{}
@@ -33,20 +33,20 @@ func (s *Store) Count(c appengine.Context) int64 {
 // PutMulti given a []*datastore.Key and a struct pointer adds multiple entities
 // to the store".
 func (s *Store) PutMulti(c appengine.Context, key []*datastore.Key, src interface{}) ([]*datastore.Key, error) {
-	// TODO(kylefinley) Error codes should be converted to hal/ds errors.
+	// TODO(kylefinley) Error codes should be converted to ds errors.
 	return datastore.PutMulti(c, key, src)
 }
 
 // Put given a *datastore.Key and a struct pointer adds a single entity
 // to the store.
 func (s *Store) Put(c appengine.Context, key *datastore.Key, src interface{}) (*datastore.Key, error) {
-	// TODO(kylefinley) Error codes should be converted to hal/ds errors.
+	// TODO(kylefinley) Error codes should be converted to ds errors.
 	return datastore.Put(c, key, src)
 }
 
 // GetMulti given a []*datastore.Key returns multiple entities from the store
 func (s *Store) GetMulti(c appengine.Context, key []*datastore.Key, dst interface{}) error {
-	// TODO(kylefinley) Error codes should be converted to hal/ds errors.
+	// TODO(kylefinley) Error codes should be converted to ds errors.
 	// This needs to be optimized.
 	dserr := datastore.GetMulti(c, key, dst)
 	if dserr != nil {

@@ -17,8 +17,8 @@ import (
 	"bytes"
 	"encoding/gob"
 	"errors"
-	dserrors "github.com/scotch/aego/v1/ds/errors"
-	"github.com/scotch/aego/v1/ds/utils"
+	dserrors "github.com/gaego/ds/errors"
+	"github.com/gaego/ds/utils"
 	"reflect"
 )
 

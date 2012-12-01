@@ -20,7 +20,7 @@ import (
 	"bytes"
 	"encoding/gob"
 	"errors"
-	dserrors "github.com/scotch/aego/v1/ds/errors"
+	dserrors "github.com/gaego/ds/errors"
 	"reflect"
 	"sync"
 )

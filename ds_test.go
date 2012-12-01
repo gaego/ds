@@ -6,8 +6,8 @@ package ds
 
 import (
 	"appengine/datastore"
-	"github.com/scotch/aego/v1/context"
-	dserrors "github.com/scotch/aego/v1/ds/errors"
+	"github.com/gaego/context"
+	dserrors "github.com/gaego/ds/errors"
 	"reflect"
 	"testing"
 	"time"

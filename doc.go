@@ -1,15 +1,15 @@
-// Copyright 2012 AEGo Authors. All rights reserved.
+// Copyright 2012 GAEGo Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
 /*
 Package ds provides cached presistence for the Google App Engine datastore.
 
-hal/ds the same API as the "appengine/datastore" so It will work as a drop in replacement.
+ds has the same API as the "appengine/datastore" so It will work as a drop in replacement.
 
 E.g.
 
-	import "github.com/scotch/aego/v1/ds"
+	import "github.com/gaego/ds"
 
 	u = &User{Name: "Bob"}
 	key := datastore.NewKey(c, "User", "bob", 0, nil)
