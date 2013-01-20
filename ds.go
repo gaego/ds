@@ -3,7 +3,7 @@
 // license that can be found in the LICENSE file.
 
 /*
-Package ds provides cached presistence for the Google App Engine datastore.
+Package ds provides cached persistence for the Google App Engine datastore.
 
 */
 package ds
@@ -18,7 +18,7 @@ package ds
 // Store would be as simple as creating a Store that implements Storer, and passing
 // a pointer to the Register() method.
 //
-// The end goal is to create a consistant interface for all types of data persistence.
+// The end goal is to create a consistent interface for all types of data persistence.
 
 // TODO(kylefinley) add support for gob encoding of invalid datastore types.
 // E.g.
