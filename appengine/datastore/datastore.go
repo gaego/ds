@@ -74,7 +74,7 @@ func (s *Store) GetMulti(c appengine.Context, key []*datastore.Key, dst interfac
 
 // Get given a *datastore.Key returns a single entity from the store
 func (s *Store) Get(c appengine.Context, key *datastore.Key, dst interface{}) error {
-	err = datastore.Get(c, key, dst)
+	err := datastore.Get(c, key, dst)
 	return convertError(err)
 }
 
