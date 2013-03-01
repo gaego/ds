@@ -44,34 +44,38 @@ func (s *Store) Put(c appengine.Context, key *datastore.Key, src interface{}) (*
 	return datastore.Put(c, key, src)
 }
 
+func convertError(err error) error {
+	if err == datastore.ErrNoSuchEntity {
+		return dserrors.ErrNoSuchEntity
+	}
+	return err
+}
+
 // GetMulti given a []*datastore.Key returns multiple entities from the store
 func (s *Store) GetMulti(c appengine.Context, key []*datastore.Key, dst interface{}) error {
 	// TODO(kylefinley) Error codes should be converted to ds errors.
 	// This needs to be optimized.
 	dserr := datastore.GetMulti(c, key, dst)
 	if dserr != nil {
-		err := make(appengine.MultiError, len(key))
-		for i, e := range dserr.(appengine.MultiError) {
-			if e != nil {
-				if e == datastore.ErrNoSuchEntity {
-					err[i] = dserrors.ErrNoSuchEntity
-				} else {
-					err[i] = e
+		if newDserr, ok := dserr.(appengine.MultiError); ok {
+			err := make(appengine.MultiError, len(key))
+			for i, e := range dserr.(appengine.MultiError) {
+				if e != nil {
+					err[i] = convertError(err)
 				}
 			}
+			return err
+		} else {
+			return convertError(dserr)
 		}
-		return err
 	}
 	return nil
 }
 
 // Get given a *datastore.Key returns a single entity from the store
-func (s *Store) Get(c appengine.Context, key *datastore.Key, dst interface{}) (err error) {
+func (s *Store) Get(c appengine.Context, key *datastore.Key, dst interface{}) error {
 	err = datastore.Get(c, key, dst)
-	if err == datastore.ErrNoSuchEntity {
-		err = dserrors.ErrNoSuchEntity
-	}
-	return
+	return convertError(err)
 }
 
 // DeleteMulti given a []*datastore.Key deletes multiple entities from the store
