@@ -61,7 +61,7 @@ func (s *Store) GetMulti(c appengine.Context, key []*datastore.Key, dst interfac
 			err := make(appengine.MultiError, len(key))
 			for i, e := range newDserr {
 				if e != nil {
-					err[i] = convertError(err)
+					err[i] = convertError(e)
 				}
 			}
 			return err
